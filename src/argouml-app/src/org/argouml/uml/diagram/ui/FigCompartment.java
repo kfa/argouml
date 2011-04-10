@@ -54,6 +54,7 @@ import org.argouml.ui.targetmanager.TargetManager;
 import org.argouml.uml.diagram.DiagramSettings;
 import org.tigris.gef.presentation.Fig;
 import org.tigris.gef.presentation.FigRect;
+import org.tigris.gef.presentation.TextEditor;
 
 /**
  * Presentation logic for a UML List Compartment. <p>
@@ -88,6 +89,7 @@ public abstract class FigCompartment extends ArgoFigGroup {
      */
     private Fig externalSeparatorFig = new FigSeparator(X0, Y0, 11, LINE_WIDTH);
 
+	private TextEditor startTextEditor;
 
     private void constructFigs(int x, int y, int w, int h) {
         bigPort = new FigPort(X0, Y0, w, h);
@@ -341,9 +343,16 @@ public abstract class FigCompartment extends ArgoFigGroup {
             LOG.debug("Attempted to populate a FigEditableCompartment" 
                     + " using a deleted model element - aborting", e);
         } 
+        
+        if (startTextEditor != null) {
+            startTextEditor.cancelEditing();
+            startTextEditor = null;
+        }
 
         if (comp != null) {
             comp.setBotMargin(6); // the last one needs extra space below it
+            
+            startTextEditor = comp.startTextEditor(null);
         }
     }
     

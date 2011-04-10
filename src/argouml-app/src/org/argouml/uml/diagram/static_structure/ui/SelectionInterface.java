@@ -42,13 +42,14 @@ import javax.swing.Icon;
 
 import org.argouml.application.helpers.ResourceLoaderWrapper;
 import org.argouml.model.Model;
+import org.argouml.uml.diagram.ui.SelectionNodeClarifierWithAttrbuteButtuns;
 import org.argouml.uml.diagram.ui.SelectionNodeClarifiers2;
 import org.tigris.gef.presentation.Fig;
 
 /**
  * @author jrobbins@ics.uci.edu
  */
-public class SelectionInterface extends SelectionNodeClarifiers2 {
+public class SelectionInterface extends SelectionNodeClarifierWithAttrbuteButtuns {
 
     private static Icon realiz =
         ResourceLoaderWrapper.lookupIconResource("Realization");

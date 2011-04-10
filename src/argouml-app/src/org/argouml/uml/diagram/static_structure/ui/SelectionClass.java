@@ -46,6 +46,7 @@ import javax.swing.Icon;
 import org.argouml.application.helpers.ResourceLoaderWrapper;
 import org.argouml.model.Model;
 import org.argouml.uml.diagram.deployment.DeploymentDiagramGraphModel;
+import org.argouml.uml.diagram.ui.SelectionNodeClarifierWithAttrbuteButtuns;
 import org.argouml.uml.diagram.ui.SelectionNodeClarifiers2;
 import org.tigris.gef.base.Editor;
 import org.tigris.gef.base.Globals;
@@ -55,7 +56,7 @@ import org.tigris.gef.presentation.Fig;
 /**
  * @author jrobbins@ics.uci.edu
  */
-public class SelectionClass extends SelectionNodeClarifiers2 {
+public class SelectionClass extends SelectionNodeClarifierWithAttrbuteButtuns {
 
     private static Icon inherit =
         ResourceLoaderWrapper.lookupIconResource("Generalization");
